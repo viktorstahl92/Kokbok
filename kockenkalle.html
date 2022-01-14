@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallenbergare</title>
+
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color: linen;
+            font-size: 1vh;
+        }
+
+        #navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        #navbar a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        #navbar a:hover {
+            background-color: rgb(231, 178, 178);
+            color: black;
+        }
+
+        #navbar a.active {
+            background-color: olive;
+            color: white;
+            text-decoration: underline;
+        }
+
+        #recipeBasicInfo {
+
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: auto;
+            
+        }
+        .recipeBasicInfo {
+            text-align: center;
+            margin-top: 15px;
+            background-color: lightyellow;
+            border: black solid 1px;
+            padding: 5px;
+        }
+
+        .recipeDifficultyInfo{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            text-align: center;
+            margin: 15px;
+            background-color: rgb(218, 234, 255);
+        }
+
+
+        #recipeBasicInfo h1{
+            text-transform: uppercase;
+            
+        }
+
+        #recipeBasicInfo p{
+            font-size: 1em;
+        }
+
+        #rating{
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr)
+            
+        }
+
+        #rating img{
+            object-fit: cover;
+            width: 100%;
+            max-height: 100%;
+        }
+
+        #rating img:hover{
+            transform:rotate(15deg);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="navbar">
+        <a href="#home">Start</a>
+        <a href="#home" class="active">Recept</a>
+        <a href="#home">Livsmedel</a>
+        <a href="#home">Hållbarhet</a>
+    </section>
+    <section id="recipeBasicInfo">
+        <img src="wallenbergare.jpg" />
+        <div class="recipeBasicInfo">
+            <h1>Wallenbergare</h1>
+            <p>
+                Klassiska wallenbergare när de är som bäst! Saftiga biffar på kalvfärs, ägg och grädde som serveras med en krämig potatispuré, ärtor och brynt smör. Och så syrliga rårörda lingon till såklart.
+            </p>
+
+            <div class="recipeDifficultyInfo">
+                <div>
+                    <p>Svårighetsgrad: <strong>Medel</strong></p>
+                </div>
+                <div>
+                    <p>Tid: <strong>Över 60 minuter</strong></p>
+                </div>
+            </div>
+        </div>
+    
+        <div id="rating">
+            <img src="ratedstar.png" />
+            <img src="ratedstar.png" />
+            <img src="ratedstar.png" />
+            <img src="ratedstar.png" />
+            <img src="unratedstar.png" />
+        </div>
+    </section>
+
+
+    <section id="recipeWalkthrough">
+        <section id="recipeLeft"></section>
+        <section id="recipeRight"></section>
+    </section>
+
+    <section id="sendRecipeToMail"></section>
+
+    <section id="SimilarRecipes"></section>
+
+</body>
+
+</html>
