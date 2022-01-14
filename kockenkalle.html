@@ -48,8 +48,15 @@
             flex-direction: column;
             justify-content: center;
             margin: auto;
-            
+
         }
+
+        #recipeBasicInfo img {
+            max-height: 400px;
+            max-width: 400px;
+            align-self: center;
+        }
+
         .recipeBasicInfo {
             text-align: center;
             margin-top: 15px;
@@ -58,7 +65,9 @@
             padding: 5px;
         }
 
-        .recipeDifficultyInfo{
+
+
+        .recipeDifficultyInfo {
             display: grid;
             grid-template-columns: 1fr 1fr;
             text-align: center;
@@ -67,30 +76,42 @@
         }
 
 
-        #recipeBasicInfo h1{
+        #recipeBasicInfo h1 {
             text-transform: uppercase;
-            
+
         }
 
-        #recipeBasicInfo p{
+        #recipeBasicInfo p {
             font-size: 1em;
         }
 
-        #rating{
-            margin-top: 30px;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr)
-            
+        #rating {
+            margin: 15px;
+            margin-top: 5px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
         }
 
-        #rating img{
-            object-fit: cover;
-            width: 100%;
-            max-height: 100%;
+        #rating {
+            font-size: 0;
         }
 
-        #rating img:hover{
-            transform:rotate(15deg);
+        #rating span {
+            font-size: 40px;
+            margin-left: 20px;
+        }
+
+        #rating span::before {
+            content: "☆";
+        }
+
+        #rating span.active::before {
+            content: "★";
+            color: darkorange;
+        }
+
+        #rating span:hover {
             cursor: pointer;
         }
     </style>
@@ -108,7 +129,8 @@
         <div class="recipeBasicInfo">
             <h1>Wallenbergare</h1>
             <p>
-                Klassiska wallenbergare när de är som bäst! Saftiga biffar på kalvfärs, ägg och grädde som serveras med en krämig potatispuré, ärtor och brynt smör. Och så syrliga rårörda lingon till såklart.
+                Klassiska wallenbergare när de är som bäst! Saftiga biffar på kalvfärs, ägg och grädde som serveras med
+                en krämig potatispuré, ärtor och brynt smör. Och så syrliga rårörda lingon till såklart.
             </p>
 
             <div class="recipeDifficultyInfo">
@@ -120,13 +142,13 @@
                 </div>
             </div>
         </div>
-    
+
         <div id="rating">
-            <img src="ratedstar.png" />
-            <img src="ratedstar.png" />
-            <img src="ratedstar.png" />
-            <img src="ratedstar.png" />
-            <img src="unratedstar.png" />
+            <span class="active"></span>
+            <span class="active"></span>
+            <span class="active"></span>
+            <span></span>
+            <span></span>
         </div>
     </section>
 
@@ -140,6 +162,16 @@
 
     <section id="SimilarRecipes"></section>
 
+
+    <script>
+        document.querySelector('#rating').addEventListener('click', function (e) {
+            let action = 'add';
+            for (const span of this.children) {
+                span.classList[action]('active');
+                if (span === e.target) action = 'remove';
+            }
+        });
+    </script>
 </body>
 
 </html>
